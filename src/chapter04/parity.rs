@@ -1,5 +1,5 @@
 const PRECOMPUTED_PARITY_SIZE: usize = u16::MAX as usize;
-const BIT_MASK: usize = 0xFFFF;
+const BIT_MASK: u64 = 0xFFFF;
 
 pub struct ParityCalculator {
     precomputed_parity: [u8; PRECOMPUTED_PARITY_SIZE],
@@ -22,10 +22,10 @@ impl ParityCalculator {
     }
 
     pub fn calculate_parity(&self, n: u64) -> u8 {
-        self.precomputed_parity[(n & BIT_MASK as u64) as usize]
-            ^ self.precomputed_parity[(n >> 16 & BIT_MASK as u64) as usize]
-            ^ self.precomputed_parity[(n >> 32 & BIT_MASK as u64) as usize]
-            ^ self.precomputed_parity[(n >> 48 & BIT_MASK as u64) as usize]
+        self.precomputed_parity[(n & BIT_MASK) as usize]
+            ^ self.precomputed_parity[(n >> 16 & BIT_MASK) as usize]
+            ^ self.precomputed_parity[(n >> 32 & BIT_MASK) as usize]
+            ^ self.precomputed_parity[(n >> 48 & BIT_MASK) as usize]
     }
 }
 
