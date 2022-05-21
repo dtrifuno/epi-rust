@@ -1,2 +1,2 @@
 mod parity;
-mod reverse_bits;
+mod reverse;mod reverse_bits;
