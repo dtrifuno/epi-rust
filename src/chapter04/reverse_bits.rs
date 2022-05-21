@@ -47,7 +47,7 @@ mod tests {
     #[case(1, 2u64.pow(63))]
     #[case(2u64.pow(31), 2u64.pow(32))]
     #[case(2u64.pow(63) - 1, u64::MAX - 1)]
-    fn reverse_bits(#[case] input: u64, #[case] expected: u64) {
+    fn test_reverse_bits(#[case] input: u64, #[case] expected: u64) {
         let br = BitReverser::new();
         assert_eq!(expected, br.reverse_bits(input));
     }

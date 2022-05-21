@@ -39,7 +39,7 @@ mod tests {
     #[case(1, 1)]
     #[case(0b_0100_1000_0010, 1)]
     #[case(0b_1111_1111_1111_1111, 0)]
-    fn calculate_parity(#[case] input: u64, #[case] expected: u8) {
+    fn test_calculate_parity(#[case] input: u64, #[case] expected: u8) {
         let pc = ParityCalculator::new();
         assert_eq!(expected, pc.calculate_parity(input));
     }

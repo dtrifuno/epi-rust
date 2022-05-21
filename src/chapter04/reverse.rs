@@ -25,7 +25,7 @@ mod tests {
     #[case(1, 1)]
     #[case(54033200, 233045)]
     #[case(-234131500, -5131432)]
-    fn reverse_ints(#[case] input: i32, #[case] expected: i64) {
+    fn test_reverse(#[case] input: i32, #[case] expected: i64) {
         assert_eq!(expected, reverse(input));
     }
 }
